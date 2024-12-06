@@ -1,0 +1,11 @@
+{
+  "files": ["./tsconfig.app.json", "./tsconfig.node.json"],
+  "include": ["./typed-router.d.ts"],
+  "compilerOptions": {
+    "composite": true,
+    "types": ["unplugin-vue-router/client"],
+    "module": "es2020", 
+    "moduleResolution": "bundler",
+    "allowSyntheticDefaultImports": true
+  }
+}
