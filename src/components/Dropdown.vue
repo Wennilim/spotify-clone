@@ -5,12 +5,12 @@ const props = defineProps({
   links: {
     type: Array,
     required: true,
-  }
+  },
 });
 </script>
 
 <template>
-  <Menu as="div" class="relative inline-block text-left">
+  <Menu as="div" class="relative inline-block text-left z-50">
     <MenuButton as="template" class="text-white flex gap-2">
       <slot></slot>
     </MenuButton>
@@ -32,7 +32,8 @@ const props = defineProps({
           as="a"
           class="text-white flex gap-3 p-2 font-regular text-sm hover:bg-[#383838] bg-[#282828] hover:rounded-md cursor-pointer"
         >
-         <span class="self-center" :class="link.icon"></span> {{ link.label }}
+          <span class="self-center" :class="link.icon ?? ''"></span>
+          {{ link.label }}
         </MenuItem>
       </MenuItems>
     </transition>

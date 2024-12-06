@@ -10,8 +10,16 @@ import { ref, nextTick } from "vue";
 import Dropdown from "./Dropdown.vue";
 
 const playlistLinks = [
-  { href: "/create-playlist", label: "Create a new playlist", icon: "pi pi-list" },
-  { href: "/create-playlist-folder", label: "Create a playlist folder", icon: "pi pi-folder-plus" },
+  {
+    href: "/create-playlist",
+    label: "Create a new playlist",
+    icon: "pi pi-list",
+  },
+  {
+    href: "/create-playlist-folder",
+    label: "Create a playlist folder",
+    icon: "pi pi-folder-plus",
+  },
 ];
 
 const expanded = ref(false);
@@ -45,12 +53,15 @@ const handleClickSearch = async () => {
 
 <template>
   <div class="bg-[#202020] min-h-[85vh] p-2 mx-3 rounded-md">
-    <LibraryIcon
-      class="w-6 h-6 my-2 justify-self-center hover:text-white cursor-pointer"
-      color="#b3b3b3"
-      @click="toggleExpanded"
-      v-if="!expanded"
-    />
+    <div class="flex items-center justify-center">
+      <LibraryIcon
+        class="w-6 h-6 my-2 hover:text-white cursor-pointer"
+        color="#b3b3b3"
+        @click="toggleExpanded"
+        v-if="!expanded"
+      />
+    </div>
+
     <div
       :class="['flex', 'flex-col']"
       :style="{ width: `${sidebarWidth}` }"
@@ -58,10 +69,10 @@ const handleClickSearch = async () => {
     >
       <div class="flex justify-between">
         <div
-          class="flex p-2 gap-2 cursor-pointer hover:text-white text-[#b3b3b3]"
+          class="flex p-2 gap-2 cursor-pointer justify-center items-center hover:text-white text-[#b3b3b3]"
           @click="handleLibraryClick"
         >
-          <LibraryIcon class="w-4 h-4 my-2 justify-self-center" />
+          <LibraryIcon class="w-4 h-4 my-2" />
           <span class="text-sm font-semibold content-center">Your Library</span>
         </div>
 
@@ -93,10 +104,7 @@ const handleClickSearch = async () => {
           @click="handleClickSearch"
           v-if="!isOpen"
         >
-          <SearchIcon
-            class="w-4 h-4 my-2 justify-self-center"
-            color="#b3b3b3"
-          />
+          <SearchIcon class="w-4 h-4 my-2 place-self-center" color="#b3b3b3" />
         </div>
         <transition
           :name="sidebarWidth !== '25vw' ? 'slideFromRight' : 'slideFromLeft'"
@@ -114,7 +122,7 @@ const handleClickSearch = async () => {
           class="flex gap-2 text-sm font-regular items-center hover:text-white text-[#b3b3b3] cursor-pointer hover:scale-105"
         >
           Recents
-          <ListBulletedIcon class="w-4 h-4 my-2 justify-self-center" />
+          <ListBulletedIcon class="w-4 h-4 my-2 place-self-center" />
         </div>
       </div>
 
@@ -153,7 +161,7 @@ const handleClickSearch = async () => {
       class="p-2 mt-4 bg-gradient-to-br from-[#470BF3] to-[#B6B8DA] flex items-center justify-center rounded-md cursor-pointer w-12 h-12"
       v-if="!expanded"
     >
-    <IconHeart fillColor="white" class="custom-width" />
+      <IconHeart fillColor="white" class="custom-width" />
     </div>
   </div>
 </template>

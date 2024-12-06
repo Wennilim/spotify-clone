@@ -6,11 +6,34 @@ import FileIcon from "../icons/FileIcon.vue";
 import InstallIcon from "../icons/InstallIcon.vue";
 import BellIcon from "../icons/BellIcon.vue";
 import { ref, watch } from "vue";
+import Dropdown from "./Dropdown.vue";
 
 const windowWidth = ref(window.innerWidth);
 watch(windowWidth, () => {
   windowWidth.value = window.innerWidth;
 });
+
+const settingsLinks = [
+  {
+    href: "/account",
+    label: "Account",
+    icon: "pi pi-window-maximize",
+  },
+  {
+    href: "/profile",
+    label: "Profile",
+    icon: "pi pi-user",
+  },
+  {
+    href: "/setting",
+    label: "Settings",
+    icon: "pi pi-cog",
+  },
+  {
+    href: "",
+    label: "Log Out",
+  },
+];
 </script>
 
 <template>
@@ -63,12 +86,14 @@ watch(windowWidth, () => {
         @click="$router.push('/notifications')"
       />
 
-      <div class="p-2 rounded-full bg-[#202020]">
-        <img
-          class="w-8 h-8 rounded-full"
-          src="https://i.pravatar.cc/150?img=3"
-        />
-      </div>
+      <Dropdown :links="settingsLinks">
+        <div class="p-2 rounded-full bg-[#202020] cursor-pointer">
+          <img
+            class="w-8 h-8 rounded-full"
+            src="https://i.pravatar.cc/150?img=3"
+          />
+        </div>
+      </Dropdown>
     </div>
   </div>
 </template>

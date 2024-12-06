@@ -49,7 +49,7 @@ const handleVideoPause = (index: number) => {
       >
         <div class="w-[400px] h-[500px] rounded-md shadow-2xl"></div>
         <div
-          class="absolute top-0 left-0 w-full h-full flex p-4 rounded-md transition-all duration-500 bg-opacity-50 gap-3"
+          class="absolute flex-col overflow-hidden top-0 left-0 w-full h-full flex p-4 rounded-md transition-all duration-500 bg-opacity-50 gap-16"
            :style="{ backgroundColor: videolist.bgColor }"
         >
           <div class="flex flex-col gap-2">
@@ -73,7 +73,7 @@ const handleVideoPause = (index: number) => {
         <span
           :class="{
             'absolute flex items-end left-4 bottom-4 text-[#b3b3b3] font-thin text-sm transition-all duration-300 w-[250px]': true,
-            'transform -translate-y-4': hoverStates[index],
+            'transform -translate-y-12': hoverStates[index],
           }"
           >{{ videolist.description }}</span
         >
