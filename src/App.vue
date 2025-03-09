@@ -6,7 +6,7 @@ import Sidebar from "./components/Sidebar.vue";
 </script>
 
 <template>
-  <div class="bg-black h-screen w-screen min-w-fit min-h-fit max-h-screen">
+  <div class="bg-black h-screen w-screen min-w-fit min-h-fit max-h-screen hide-scrollbar">
     <MyHeader />
     <div class="flex flex-row">
       <Sidebar />
