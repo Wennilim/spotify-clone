@@ -15,10 +15,10 @@ const handleTabChange = (index: number) => {
 
 <template>
   <TabGroup :selectedIndex="tabSelectedIndex" @change="handleTabChange">
-    <div class="flex flex-col w-full items-center">
+    <div class="flex flex-col w-full items-center hideScrollbar">
       <div class="w-full items-center">
         <TabList
-          class="text-white flex space-x-2 p-4 rounded-t-md bg-[#202020] overflow-hidden overflow-x-scroll"
+          class="text-white flex space-x-2 p-4 rounded-t-md bg-[#202020] overflow-hidden overflow-x-scroll hideScrollbar"
 
         >
           <Tab
@@ -37,7 +37,7 @@ const handleTabChange = (index: number) => {
       </div>
 
       <TabPanels
-        class="text-white h-[83vh] bg-[#202020] px-4 rounded-b-md overflow-hidden overflow-y-scroll"
+        class="text-white h-[83vh] bg-[#202020] px-4 rounded-b-md overflow-hidden overflow-y-scroll hideScrollbar"
       >
         <TabPanel v-for="(tab, index) in props.tabs" :key="index">
           <component :is="tab.content"></component>
