@@ -1,8 +1,8 @@
 export const songList = [
     {
       id: 1,
-      src: "https://image-cdn-ak.spotifycdn.com/image/ab67706c0000d72c7edf05603f39ec5b8a2c589f",
-      title: "Jason Derulo - From the Islands (kompa pasión)",
+      src: "https://i.scdn.co/image/ab6761610000e5eb62fa38af4bdc7322b2103493",
+      title: "Jason Derulo",
     },
     {
       id: 2,
@@ -37,6 +37,6 @@ export const songList = [
     {
       id: 8,
       src: "https://i.scdn.co/image/ab6761610000e5eb62fa38af4bdc7322b2103493",
-      title: "Jason Derulo",
+      title: "Daily Mix 1",
     },
   ];
